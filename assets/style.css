@@ -11,3 +11,37 @@ button {
     border:0; 
     padding: 5px 15px;
 }
+
+#highScoreDiv {
+    margin: 15px;
+    display: flex;
+    justify-content: space-between;
+}
+
+#title {
+ margin: auto; 
+ text-align: center;  
+}
+#timeCounter {
+    list-style: none;
+    color: black;
+    text-align: end;
+}
+#highScores {
+    list-style: none;
+    color: #800080;
+    text-align: start;
+}
+
+#gameDescript {
+    margin-top:15px; 
+    padding-left:380px; 
+    padding-right: 380px; 
+    text-align:center;
+}
+
+#first {
+    display:flex; 
+    justify-content:center; 
+    padding:20px
+}

@@ -24,3 +24,4 @@ THEN I can save my initials and score
 ## Portfolio Screenshot
 
 ## Deployed URL
+https://mollyturner.github.io/Timed-JavaScript-Quiz/

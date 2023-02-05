@@ -21,7 +21,9 @@ THEN the game is over
 WHEN the game is over
 THEN I can save my initials and score
 ```
-## Portfolio Screenshot
+## Timed Quiz Screenshot
+![image](https://user-images.githubusercontent.com/93564137/216805795-3ef423d6-9b78-400d-8fa0-8262c11ef9c7.png)
+
 
 ## Deployed URL
 https://mollyturner.github.io/Timed-JavaScript-Quiz/

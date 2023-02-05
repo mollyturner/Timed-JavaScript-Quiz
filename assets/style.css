@@ -89,3 +89,15 @@ button {
     margin-left: 20px;
     margin-right: 5px;
 }
+
+#highScoresContainerID {
+    display: flex;
+    flex-direction: column;
+    width: fit-content;
+    margin: auto;
+}
+
+#goBackBtnID {
+    margin-right: 10px;
+}
+

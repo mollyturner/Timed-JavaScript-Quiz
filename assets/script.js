@@ -7,6 +7,9 @@ var h1El = document.createElement('h1');
 var descriptEl = document.createElement('div')
 var startBtnDiv = document.createElement('div');
 var startBtn = document.createElement('button');
+var inputBox = document.createElement('input');
+var submitBtn = document.createElement('input');
+var body = document.querySelector('body');
 
 // Question elements
 var quizCard = document.getElementById('quiz-card');
@@ -185,8 +188,7 @@ function createScorePage() {
     var completedEl = document.createElement('div');
     var initialsParentDiv = document.createElement('div');
     var initialsEl = document.createElement('div');
-    var inputBox = document.createElement('input');
-    var submitBtn = document.createElement('input');
+
 
     questionResult.setAttribute('id', 'questionResultID');
     initialsParentDiv.setAttribute('id', 'initialsParentID');
@@ -196,7 +198,7 @@ function createScorePage() {
     inputBox.setAttribute('id', 'inputBoxID');
 
     h2El.textContent = 'All done!';
-    completedEl.textContent = `Your final score is ${timeRemaining+1}`;
+    completedEl.textContent = `Your final score is ${timeRemaining + 1}`;
     initialsEl.textContent = 'Enter Initials: ';
 
     highScoreDiv.after(questionResult);
@@ -236,9 +238,72 @@ function questionRender(number) {
 };
 
 submitBtn.addEventListener('click', function () {
+
     questionResultID.style.display = 'none';
     topOfPage.style.display = 'none';
-})
+    questionResult.style.display = 'none';
+
+    winners = JSON.parse(localStorage.getItem("winners") || "[]");
+
+    // localStorage.setItem("Score", JSON.strigtimeRemaining+1);
+    winners.push({ initials: inputBox.value, score: timeRemaining + 1 });
+    localStorage.setItem("winners", JSON.stringify(winners));
+
+
+    createHighScorePage();
+});
+
+function createHighScorePage() {
+    var highScoresContainer = document.createElement('section');
+    var highScoresContainer2 = document.createElement('div');
+    var highScoreTitle = document.createElement('h1');
+    var winnersContainer = document.createElement('div');
+    var buttonsContainer = document.createElement('div');
+    var goBackBtn = document.createElement('button');
+    var clearHighScoresBtn = document.createElement('button');
+    buttonsContainer.setAttribute('id', 'buttonsContainerID');
+    goBackBtn.setAttribute('id', 'goBackBtnID');
+
+
+    highScoresContainer.setAttribute('id', 'highScoresContainerID');
+
+    body.appendChild(highScoresContainer);
+    highScoresContainer.appendChild(highScoreTitle);
+    highScoresContainer.appendChild(winnersContainer)
+    highScoresContainer.appendChild(buttonsContainer);
+    buttonsContainer.appendChild(goBackBtn);
+    buttonsContainer.appendChild(clearHighScoresBtn);
+    highScoresContainer.appendChild(highScoresContainer2);
+
+    goBackBtn.textContent = 'Go Back';
+    clearHighScoresBtn.textContent = 'Clear High Scores';
+    highScoreTitle.textContent = 'High Scores';
+
+    goBackBtn.addEventListener('click', function () {
+        location.reload();
+    });
+
+    var winners = JSON.parse(localStorage.getItem('winners'));
+    console.log(winners);
+    console.log(`winners.length ${winners.length}`);
+
+    for (let i = 0; i < winners.length; i++) {
+        var highScoresCard = document.createElement('div');
+        var highScoresText = document.createElement('h4');
+
+        var winner = winners[i];
+        var winnerNum = i + 1;
+        highScoresText.textContent = `${winnerNum}. ${winner.initials} - ${winner.score}`;
+
+        highScoresContainer2.append(highScoresCard);
+        highScoresCard.append(highScoresText);
+    };
+    clearHighScoresBtn.addEventListener('click', function () {
+        localStorage.clear();
+        highScoresContainer2.textContent = ' ';
+
+      });
+};
 
 
 

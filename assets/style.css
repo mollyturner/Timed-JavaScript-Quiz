@@ -5,9 +5,99 @@ background-color: #800080;
 button {
     background-color: #230073;
     text-align:center; 
-    background-color:#230073; 
     border-radius:5px; 
     color:white; 
     border:0; 
     padding: 5px 15px;
 }
+
+#highScoreDiv {
+    margin: 15px;
+    display: flex;
+    justify-content: space-between;
+}
+
+#title {
+ margin: auto; 
+ text-align: center;  
+ font-size: x-large;
+}
+#timeCounter {
+    list-style: none;
+    color: black;
+    text-align: end;
+}
+#highScores {
+    list-style: none;
+    color: #800080;
+    text-align: start;
+}
+
+#section2 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#gameDescript {
+    margin-top:15px; 
+    padding-left:380px; 
+    padding-right: 380px; 
+    text-align:center;
+}
+
+#first {
+    display:flex; 
+    justify-content:center; 
+    padding:20px
+}
+
+#quiz-card {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+#firstBtnDiv {
+    margin: 20px;
+}
+
+.quiz-button {
+    width: 20%;
+    padding: 10px;
+    margin: 10px;
+}
+
+.quiz-button:after {
+    background-color:#230073; 
+
+}
+
+#questionResultID {
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    align-items: inherit;
+    width: fit-content;
+}
+
+#initialsParentID {
+    display: flex;
+}
+
+#inputBoxID {
+    margin-left: 20px;
+    margin-right: 5px;
+}
+
+#highScoresContainerID {
+    display: flex;
+    flex-direction: column;
+    width: fit-content;
+    margin: auto;
+}
+
+#goBackBtnID {
+    margin-right: 10px;
+}
+
